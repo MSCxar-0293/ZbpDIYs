@@ -5,12 +5,10 @@ import (
 	control "github.com/FloatTech/zbputils/control"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
-
-	"github.com/FloatTech/zbputils/control/order"
 )
 
 func init(){
-	engine := control.Register("example",order.AcquirePrio(), &control.Options{
+	engine := control.Register("example", &control.Options{
 		DisableOnDefault: false,
 		Help: "example\n" +
 		"- hello, world! \n" +

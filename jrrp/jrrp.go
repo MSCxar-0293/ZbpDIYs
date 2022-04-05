@@ -9,12 +9,10 @@ import (
 	control "github.com/FloatTech/zbputils/control"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
-
-	"github.com/FloatTech/zbputils/control/order"
 )
 
 func init(){
-	engine := control.Register("jrrp",order.AcquirePrio(), &control.Options{
+	engine := control.Register("jrrp", &control.Options{
 		DisableOnDefault: false,
 		Help: "jrrp\n" +
 		"- 今日人品",
