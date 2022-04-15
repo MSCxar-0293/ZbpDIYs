@@ -4,6 +4,12 @@
 
 > 自用插件收集。
 
+### 简介
+
+本仓库为[ZeroBot-Plugin](https://github.com/FloatTech/ZeroBot-Plugin)的粉丝（也就是我）创建的自制ZeroBot-Plugin合集🤤🤤
+
+学习是一个漫长的过程。本仓库用于记录我在学习过程中写出来的一些姑且可以润起来的小东西。
+
 ### 列表
 
 - example
@@ -21,6 +27,13 @@
 网上冲浪时发现的api，便决定应用于自己的插件之中。~这也是我第一次使用GoLang调用json，也是我第一次使用api制作插件，对于我来说是个很有学习和纪念意义的插件。~
 
 生成的文章质量参差不齐~，要怪就怪api吧（×~
+
+- dice
+
+一个简单的掷骰小插件。想复刻一下速度回复小姐写的[dice!](https://v2docs.kokona.tech/zh/latest/index.html)的内容，故诞生此插件。（[该bt仓库大概也是这样想的吧](https://github.com/myrnfc/ZeroBot-Plugin-Dice/tree/61ed586fb870d34b07f260c53b3f70d985634d07)）但又想了想——本来zbp也不是骰娘项目呀——所以放弃全部内容的复刻，仅保留掷骰的基本功能。~手法十分稚嫩还请过路dalao手下留情~
+
+可能接下来还会有关于该插件的更新？
+  - [ ] 。ra（一个附带成功率的骰子）
 
 ### TODO
 
