@@ -6,13 +6,14 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	control "github.com/FloatTech/zbputils/control"
+	ctrl "github.com/FloatTech/zbpctrl"
+	"github.com/FloatTech/zbputils/control"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
 
 func init(){
-	engine := control.Register("gpbt200", &control.Options{
+	engine := control.Register("gpbt200", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
 		Help: "gpbt200\n" +
 		"- 狗屁不通#关键字\n" +
