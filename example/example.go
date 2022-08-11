@@ -1,14 +1,15 @@
-//Package example
+// Package example
 package example
 
 import ( 
-	control "github.com/FloatTech/zbputils/control"
+	ctrl "github.com/FloatTech/zbpctrl"
+	"github.com/FloatTech/zbputils/control"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
 
 func init(){
-	engine := control.Register("example", &control.Options{
+	engine := control.Register("example", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
 		Help: "example\n" +
 		"- hello, world! \n" +
