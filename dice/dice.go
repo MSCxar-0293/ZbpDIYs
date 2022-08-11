@@ -5,18 +5,18 @@ import (
 	"strconv"
 	"math/rand"
 
-	control "github.com/FloatTech/zbputils/control"
+	ctrl "github.com/FloatTech/zbpctrl"
+	"github.com/FloatTech/zbputils/control"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
 
 func init(){
-	engine := control.Register("dice", &control.Options{
+	engine := control.Register("dice", &ctrl.Options[*zero.Ctx]{
 		DisableOnDefault: false,
 		Help: "dice\n" +
 		"- 。r[骰子数量]d[骰子面数]\n" +
-		"- 。ra[属性名称] [成功率]\n" +
-		"注意\"。ra\"指令两个参数间的空格。" ,
+		"- 。ra[属性名称]#[次数]#[成功率]\n" ,
 	})
 	engine.OnRegex ("。r(.*)d(.*)", zero.OnlyToMe).SetBlock(true).
 	Handle(func(ctx *zero.Ctx){
@@ -41,20 +41,34 @@ func init(){
 		}
 		}
 	})
-	engine.OnRegex ("。ra(.*) (.*)").SetBlock(true).
+	engine.OnRegex ("。ra(.*)#(.*)#(.*)").SetBlock(true).
 	Handle(func(ctx *zero.Ctx){
 		text := ctx.State["regex_matched"].([]string)[1]
-		a1 := ctx.State["regex_matched"].([]string)[2]
+		timeT := ctx.State["regex_matched"].([]string)[2]
+		a1 := ctx.State["regex_matched"].([]string)[3]
 		rate, _ := strconv.Atoi(a1)
-		res := ra(rate)
-		ctx.SendChain(message.At(ctx.Event.UserID), message.Text("阁下进行", text, "的结果是", res, "了！ ﾟ∀ﾟ)σ"))
+		times, _ := strconv.Atoi(timeT)
+		ima := 0
+		msg := ""
+		for ima < times {
+			ima = ima + 1
+			res := ra(rate)
+			next := "\n"
+			if ima == times {
+				next = ""
+			}
+			msg = msg + res + next
+		}
+		ctx.SendChain(message.At(ctx.Event.UserID), message.Text("阁下进行", text, "的结果是：\n", msg))
 		})
 }
 
 func rd(r, d int) string {
 	sum := 0
 	time := 0
-	text := ""
+	rT := strconv.Itoa(r)
+	dT := strconv.Itoa(d)
+	text := "R" + rT + "D" + dT + "="
 	for time < r {
 		time = time + 1
 		res := rand.Intn(d)
@@ -84,7 +98,8 @@ func ra(rate int) string {
 		res = rand.Intn(100)
 	}
 	resT := strconv.Itoa(res)
-	text := resT + "，也就是"
+	rateT := strconv.Itoa(rate)
+	text := "D100=" + resT + "/" + rateT + " ~"
 	if res == 100 {
 		text = text + "大☆失☆败"
 		return text
