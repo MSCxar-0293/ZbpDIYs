@@ -31,7 +31,7 @@ _ "github.com/FloatTech/ZeroBot-Plugin/plugin/插件文件夹名"
 
 应同学要求写的一个人品插件。特点是一天只有一个结果，发送时附带图片。
 
-时间限制思路提供：[不愿意透露姓名的btNFC](https://github.com/myrnfc)
+时间限制思路提供：[我在这里记录一位遁入虚无之人......](https://github.com/myrnfc)
 
 </details>
 <details>
@@ -45,11 +45,13 @@ _ "github.com/FloatTech/ZeroBot-Plugin/plugin/插件文件夹名"
 <details>
  <summary>dice</summary>
 
-一个简单的掷骰小插件。想复刻一下速度回复小姐写的[dice!](https://v2docs.kokona.tech/zh/latest/index.html)的内容，故诞生此插件。（[该bt仓库大概也是这样想的吧](https://github.com/myrnfc/ZeroBot-Plugin-Dice/tree/61ed586fb870d34b07f260c53b3f70d985634d07) [该bt仓库的最新版](https://github.com/myrnfc/ZeroBot-Plugin-Dice)）但又想了想——本来zbp也不是骰娘项目呀——所以放弃全部内容的复刻，仅保留掷骰的基本功能。~手法十分稚嫩还请过路dalao手下留情~
+一个简单的掷骰小插件。想复刻一下速度回复小姐写的[dice!](https://v2docs.kokona.tech/zh/latest/index.html)的内容，故诞生此插件。（[我在这里记录一位遁入虚无之人......](https://github.com/myrnfc/ZeroBot-Plugin-Dice/tree/61ed586fb870d34b07f260c53b3f70d985634d07)）但又想了想——本来zbp也不是骰娘项目呀——所以放弃全部内容的复刻，仅保留掷骰的基本功能。~手法十分稚嫩还请过路dalao手下留情~
 
 可能接下来还会有关于该插件的更新？
   - [x] 。ra（一个附带成功率的骰子）
   - [ ] 。reply（教学系统（可能会分到其他插件的制作规划里））
+
+注：该插件原开发组已解体为三个个体。（我是三分之一喵——）
 
 </details>
 <details>
@@ -70,6 +72,22 @@ _ "github.com/FloatTech/ZeroBot-Plugin/plugin/插件文件夹名"
 还是希望大家能玩得开心就好。
 
 感谢zbp群内大佬们的细节指导。名字不一一放出，~~有兴趣可以来群玩。~~
+
+</details>
+<details>
+ <summary>bilibiliforward</summary>
+
+一个bilibili私信中转插件。功效：初次接触爬虫、巩固解析json、巩固sql使用。
+
+仅需用户提供无脑复制过来的完整cookie即可使用的易用插件！解决了作者打开b站却懒得看私信导致的私信漏读问题，也解决了作者手机旧化引起作者开启bilibili app所需启动时间过长导致作者失去开启软件欲望的问题！（——不用打开软件也可以完成私信收发了，约等于不用特地打开软件了，也就是从源头解决问题：不需要打开就不用担心不想打开导致的问题了（hhhhhh
+
+功能列表：
+  - [x] 检查特定时间开始的私信列表（插件内默认为过去一天内）
+  - [x] 检查特定uid与你之间的对话历史（可指定条数）
+  - [x] 发送消息（文字）
+  - [ ] 发送消息（图片）（注：接口图链要求格式与qq聊天中图链图片格式导致的功能未完成、或将在日后解决该问题。
+
+群u提出来“既然已经获取了cookie，那么可以做的事一定还有很多”，因此之后可能会考虑继续深挖b站有开发价值的接口（？）——毕竟这次是为了完成课题才写的这个功能。
 
 </details>
 
